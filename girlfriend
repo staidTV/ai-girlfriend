@@ -1,0 +1,30 @@
+import random
+
+def ai_girlfriend():
+    print("Hi! I'm your AI girlfriend. How are you today?")
+    print("Type 'bye' to end the conversation.\n")
+
+    # Define some predefined responses
+    responses = {
+        "how are you": ["I'm doing great, thanks for asking!", "I'm doing wonderful, how about you?", "Feeling happy to chat with you!"],
+        "what's your name": ["I'm your virtual girlfriend!", "You can call me AI, your companion.", "I'm here to make your day better!"],
+        "i love you": ["Aww, I love you too!", "You're so sweet! I love you too.", "You're making me blush! I love you."],
+        "tell me a joke": ["Why don't scientists trust atoms? Because they make up everything!", "Why did the computer go to the doctor? Because it had a virus!"],
+        "bye": ["Goodbye, I’ll miss you!", "See you soon, take care!", "Talk to you later! Stay awesome!"],
+        "default": ["Hmm, I don’t know how to respond to that, but I’m listening.", "Interesting! Tell me more.", "That's cool! Let's keep chatting."]
+    }
+    
+    while True:
+        user_input = input("You: ").lower()
+
+        # Exit the conversation if the user says 'bye'
+        if user_input == 'bye':
+            print("Bot:", random.choice(responses['bye']))
+            break
+
+        # Respond based on user input
+        response = responses.get(user_input, responses['default'])
+        print("Bot:", random.choice(response))
+
+# Start the conversation
+ai_girlfriend()
